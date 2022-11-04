@@ -16,3 +16,7 @@ the simulation is elative to every 0.2 second instead of 1, this makes it easier
 ### Mathematics used: 
 radians to degree measures 
 
+### Sample Simulation:
+https://user-images.githubusercontent.com/91330011/200007132-23b73dec-9279-461f-83fe-f00a078d0dc0.mp4
+
+
