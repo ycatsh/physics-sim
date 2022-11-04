@@ -1,8 +1,6 @@
 import pygame, sys
-import pymunk, pymunk.pygame_util
 import math
 from pygame.locals import *
-import random
 
 clock = pygame.time.Clock()
 
