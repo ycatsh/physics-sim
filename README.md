@@ -11,8 +11,8 @@ To start, press space after entering in the values, the simulation is relative t
 ### Physics used:
 ``S = D/t`` {S= speed, D= distance, t= time}  
 ``s = u*t + (a*t^2)/2`` {S= displacement, u= initial velocity, a= acceleration, t= time}  
-``u along x = u*cosθ, along y = u*sinθ`` {θ= angle between the x axis and projection of the object}
-``(u^2*sin^2θ)/2g`` {maximum height, g= acceleration due to gravity}
+``u along x = u*cosθ, along y = u*sinθ`` {θ= angle between the x axis and projection of the object}  
+``[(u^2*sin^2(θ)]/2g`` {maximum height, g= acceleration due to gravity}
 
 ### Mathematics used: 
 ``rad = θ*(π/180)`` {Radians to degree measures}   
