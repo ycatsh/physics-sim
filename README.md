@@ -14,7 +14,7 @@ To start, press space after entering in the values, the simulation is relative t
 ``u along x = u*cosθ, along y = u*sinθ`` {θ= angle between the x axis and projection of the object}
 
 ### Mathematics used: 
-``rad = θ*(π/180)`` {Radians to degree measures} 
+``rad = θ*(π/180)`` {Radians to degree measures}   
 *and some basic trigonometry*
 
 ### Sample Simulation:
