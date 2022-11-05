@@ -1,5 +1,5 @@
 # physics-sim
-modelling projectile motion via pygame and basic kinematic equations.
+Modelling projectile motion via pygame and basic kinematic equations.
 
 ### Dependencies: 
 ``pygame``
