@@ -11,7 +11,7 @@ the simulation is relative to every 0.2 second instead of 1, this makes it easie
 
 ### Physics used:
 ``S = D/t`` {S= speed, D= distance, t= time}  
-``s = u*t + (a*t^2)/2`` {S= displacement, u= initial velocity, a= acceleration, t= time}
+``s = u*t + (a*t^2)/2`` {S= displacement, u= initial velocity, a= acceleration, t= time}  
 ``u along x = u*cosθ, along y = u*sinθ`` {θ= angle between the x axis and projection of the object}
 
 ### Mathematics used: 
