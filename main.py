@@ -92,6 +92,7 @@ def main():
 		if userValues == 3:
 			window.blit(bg, (0, 0))
 			mtext(f"angle of projection: {obj.angle}°", font, text_color, 100, 50)
+			mtext(f"press 'space' to start", font, text_color, 700, 50)
 			mtext(f"initial velocity: {obj.speed}", font, text_color, 100, 100)
 
 			mtext(f"position: {obj.rect.x, obj.rect.y}", font, text_color, 700, 100) 
