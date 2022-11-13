@@ -102,7 +102,7 @@ try:
 				mX = [(100,724), (obj.rect.x, 724)]
 
 				if start:
-					if obj.rect.y < 700+24:
+					if obj.rect.y < 701:
 						time += 0.3
 						pos = obj.move(x, y, speed, angle, time)
 						obj.rect.x = pos[0]
