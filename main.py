@@ -1,3 +1,5 @@
+import os
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "1"
 import pygame, sys
 import math
 from pygame.locals import *
@@ -28,18 +30,23 @@ y = 0
 userValues = 0
 
 while userValues < 3:
-	speed = int(input('ENTER SPEED VALUE (1, 50 pixels per second): '))
-	gravity = int(input('ENTER GRAVITY VALUE (1, 25 pixels per second): '))
-	angle = int(input('ENTER ANGLE OF PROJECTION VALUE (1, 91 deg): '))
+	speed = int(input('\nENTER SPEED VALUE (1, 50 pixels per second): '))
+	gravity = int(input('\nENTER GRAVITY VALUE (1, 25 pixels per second): '))
+	angle = int(input('\nENTER ANGLE OF PROJECTION VALUE (1, 91 deg): '))
 
-	if speed <= 50000 and speed > 0:
+	if speed <= 50 and speed > 0:
 		userValues += 1
-	if gravity <= 25 and gravity > 0:
-		userValues += 1
-	if angle < 91 and angle > 0:
-		userValues += 1
+
+		if gravity <= 25 and gravity > 0:
+			userValues += 1
+
+			if angle < 91 and angle > 0:
+				userValues += 1
+	else:
+		print('\n\nError! please enter valid values\n')
 
 	if userValues == 3:
+		print(f'\n\ncheck the opened window!\n\nAttributed Values:\nu={speed}\ng={gravity}\nangle={angle}')
 		break
 
 class Obj():
