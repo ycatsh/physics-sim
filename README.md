@@ -21,6 +21,5 @@ To start, press space after entering in the values, the simulation is relative t
 *and some basic trigonometry*
 
 ### Sample Simulation:
-https://user-images.githubusercontent.com/91330011/200007132-23b73dec-9279-461f-83fe-f00a078d0dc0.mp4
-
+https://user-images.githubusercontent.com/91330011/201543238-8d0af547-3b17-47f8-b084-80ffe0ecc0a4.mp4
 
