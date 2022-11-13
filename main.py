@@ -102,6 +102,7 @@ def main():
 			angleRadian2 = obj.angle*(math.pi/180)
 
 			hMax = round(((obj.speed**2)*(math.sin(angleRadian2)**2))/(2*obj.gravity))
+			dRange = round(((obj.speed**2)*(math.sin(2*angleRadian2)))/(obj.gravity))
 			
 			if start:
 				mtext(f"displacement: *moving*", font, text_color, 100, 150) 
@@ -111,8 +112,8 @@ def main():
 					mtext("0 px", font2, text_color, cX, 740) 
 					mtext(f"max height: -", font, text_color, 700, 150)
 				else: 
-					mtext(f"displacement: {s} units along x axis", font, text_color, 100, 150)
-					mtext(f"{s} px", font2, text_color, cX, 740) 
+					mtext(f"displacement: {dRange} units along x axis", font, text_color, 100, 150)
+					mtext(f"{dRange} px", font2, text_color, cX, 740) 
 					mtext(f"max height: {hMax} px", font, text_color, 700, 150)
 
 			pygame.draw.line(window, (255, 255, 255), mX[0], mX[1])
