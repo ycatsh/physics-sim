@@ -1,25 +1,27 @@
 # physics-sim
-Modelling projectile motion via pygame and basic kinematic equations.
 
-### Dependencies: 
-``pygame``
+Modelling and simulating physics via python and pygame.
 
-### How it works:
-The ball is given attributes via the user in the temrinal, these attributes relate to the trajectory of the ball which is simulated or rather modelled.  
-To start, press space after entering in the values, the simulation is relative to every 0.2 second instead of 1, this makes it easier to see. 
+### Dependencies:
 
-### Physics used:
-``S = D/t`` {S= speed, D= distance, t= time}  
-``s = u*t + (a*t^2)/2`` {S= displacement, u= initial velocity, a= acceleration, t= time}  
-``u along x = u*cosθ, along y = u*sinθ`` {θ= angle between the x axis and projection of the object}  
-``[(u^2*sin^2(θ)]/2g`` {maximum height, g= acceleration due to gravity}  
-``[(u^2*sin(2θ)]/g`` {range}
+`pygame`
 
+### Particle Physics
 
-### Mathematics used: 
-``rad = θ*(π/180)`` {Radians to degree measures}   
-*and some basic trigonometry*
+### Projectile Motion
 
-### Sample Simulation:
-https://user-images.githubusercontent.com/91330011/201545624-a10a9bc5-2d76-4b54-b283-292a73d77d85.mp4
+Form of motion of an object in a gravitational field.
 
+#### How it works:
+
+The ball is given attributes via the user in the terminal, these attributes relate to the trajectory of the ball which is simulated or rather modelled. To start, press space after entering in the values, the simulation is relative to every 0.2 second instead of 1, this makes it easier to see.
+
+#### Equations used:
+
+$$d = {v}\times{t}$$
+$$\Delta{x} = u\times t + \frac{a\times t^2}{2}$$
+$$u_x = u\times\cos\theta$$
+$$u_y = u\times\sin\theta$$
+$$\frac{u^2\times\sin^2\theta}{2g}$$
+$$\frac{u^2\times\sin2\theta}{g}$$
+$$ rad = \theta\times\frac{\pi}{180}$$
