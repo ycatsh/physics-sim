@@ -18,16 +18,16 @@ The ball is given attributes via the user in the terminal, these attributes rela
 
 #### Equations used:
 
-$$d = {v}\times{t}$$
+Relation between distance, speed, time $$d = {v}\times{t}$$
 
-$$\Delta{x} = u\times t + \frac{a\times t^2}{2}$$
+Displacement formula $$\Delta{x} = u\times t + \frac{a\times t^2}{2}$$
 
-$$u_x = u\times\cos\theta$$
+Componenent of velocity along x axis $$u_x = u\times\cos\theta$$
 
-$$u_y = u\times\sin\theta$$
+Componenent of velocity along y axis $$u_y = u\times\sin\theta$$
 
-$$\frac{u^2\times\sin^2\theta}{2g}$$
+Maximum height of a projectile $$\frac{u^2\times\sin^2\theta}{2g}$$
 
-$$\frac{u^2\times\sin2\theta}{g}$$
+Horizontal displacement of a projectile $$\frac{u^2\times\sin2\theta}{g}$$
 
-$$ rad = \theta\times\frac{\pi}{180}$$
+Radian to degree formula $$ rad = \theta\times\frac{\pi}{180}$$
