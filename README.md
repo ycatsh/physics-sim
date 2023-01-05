@@ -8,6 +8,17 @@ Modelling and simulating physics via python and pygame.
 
 ### Particle Physics
 
+Simulating physics of particles using forces which constitute or affect said particles.
+
+#### How it works:
+
+under dev 
+
+#### Equations used:
+
+under dev
+
+
 ### Projectile Motion
 
 Form of motion of an object in a gravitational field.
