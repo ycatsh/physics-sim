@@ -30,4 +30,4 @@ Maximum height of a projectile $$\frac{u^2\times\sin^2\theta}{2g}$$
 
 Horizontal displacement of a projectile $$\frac{u^2\times\sin2\theta}{g}$$
 
-Radian to degree formula $$ rad = \theta\times\frac{\pi}{180}$$
+Radian to degree formula $$rad = \theta\times\frac{\pi}{180}$$
