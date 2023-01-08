@@ -42,3 +42,11 @@ Maximum height of a projectile $$\frac{u^2\times\sin^2\theta}{2g}$$
 Horizontal displacement of a projectile $$\frac{u^2\times\sin2\theta}{g}$$
 
 Radian to degree formula $$rad = \theta\times\frac{\pi}{180}$$
+
+### Galton Board 
+
+Demonstrates the central limit theorem, in particular that with sufficient sample size the binomial distribution approximates a normal distribution.
+
+#### How it works 
+
+The nails are arranged in Pascal's Triangle sequence, the balls are allowed to fall through it. When the fall is completed for a specific number of balls, we see normal probability distribution graph symbolized. 
