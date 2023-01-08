@@ -19,7 +19,6 @@ def mtext(text, font, text_color, x, y):
     m = font.render(text, True, text_color)
     window.blit(m, (x, y))
 
-
 obj = pygame.image.load(f'assets/ball.png').convert_alpha()
 bg = pygame.image.load(f'assets/bg.png').convert_alpha()
 font = pygame.font.Font('fonts/C&C Red Alert [INET].ttf', 25)
@@ -114,7 +113,7 @@ def main():
 
         mX = [(100, 720), (obj.rect.x, 720)]
 
-        cX = ((mX[0])[0])+((((mX[1])[0])-((mX[0])[0]))/2)
+        cX = (mX[0][0]+mX[1][0]/2)-55
 
         if 700-obj.rect.y < hMax-2:
             if not hMax_occur == True:
