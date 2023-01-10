@@ -10,7 +10,7 @@ clock = pygame.time.Clock()
 pygame.init()
 
 windowSize = (1500, 800)
-window = pygame.display.set_mode((windowSize), pygame.NOFRAME, vsync=1)
+window = pygame.display.set_mode((windowSize), pygame.NOFRAME|SCALED, vsync=1)
 
 text_color = (255, 255, 255)
 
