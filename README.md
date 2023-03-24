@@ -27,8 +27,8 @@ https://user-images.githubusercontent.com/91330011/227472574-c2f75694-eeff-4809-
 ### Equations used:
 Relation between distance, speed, time: $d = {v}\times{t}$  
 Displacement formula: $\Delta{x} = u\times t + \frac{a\times t^2}{2}$  
-Componenent of velocity along x axis $u_x: = u\times\cos\theta$  
-Componenent of velocity along y axis $u_y: = u\times\sin\theta$  
+Componenent of velocity along x axis: $u_x = u\times\cos\theta$  
+Componenent of velocity along y axis: $u_y = u\times\sin\theta$  
 Maximum height of a projectile: $\frac{u^2\times\sin^2\theta}{2g}$  
 Horizontal displacement of a projectile: $\frac{u^2\times\sin2\theta}{g}$  
 Radian to degree formula: $\theta\times\frac{\pi}{180}$
