@@ -21,8 +21,8 @@ def mtext(text, font, text_color, x, y):
 
 obj = pygame.image.load(f'assets/ball.png').convert_alpha()
 bg = pygame.image.load(f'assets/bg.png').convert_alpha()
-font = pygame.font.Font('fonts/C&C Red Alert [INET].ttf', 25)
-font2 = pygame.font.Font('fonts/C&C Red Alert [INET].ttf', 15)
+font = pygame.font.Font('assets/fonts/C&C Red Alert [INET].ttf', 25)
+font2 = pygame.font.Font('assets/fonts/C&C Red Alert [INET].ttf', 15)
 
 time = 0
 x = 0
