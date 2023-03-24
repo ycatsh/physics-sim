@@ -6,7 +6,7 @@ Modelling and simulating physics via C++ and python.
 Approximating Gravity in C++ using the Barnes-Hut Algorithm. 
 
 ### How it works:
-Using Quadtrees, gravity for far off clusters of particles that close together is grouped and treated like a bigger particle for which gravity is applied (just an approximation). This allows for O(N logN) time complexity making the simulation viable for huge number of particles
+Using Quadtrees, gravity for far off clusters of particles that are close together is grouped and treated like a bigger particle for which gravity is applied (just an approximation). This allows for O(N logN) time complexity making the simulation viable for huge number of particles.
 
 ### Video:
 (Under Development)
