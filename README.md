@@ -22,7 +22,7 @@ Form of motion of an object in a gravitational field.
 The ball is given attributes via the user in the terminal, these attributes relate to the trajectory of the ball which is simulated or rather modelled. To start, press space after entering in the values, the simulation is relative to every 0.2 second instead of 1, this makes it easier to see.
 
 ### Video:
-https://user-images.githubusercontent.com/91330011/227472574-c2f75694-eeff-4809-a760-864815338075.mp4
+https://user-images.githubusercontent.com/91330011/227477147-9281ee5e-3099-4814-8abe-5aa0d347ba84.mp4
 
 ### Equations used:
 Relation between distance, speed, time: $d = {v}\times{t}$  
