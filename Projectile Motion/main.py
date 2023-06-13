@@ -4,25 +4,9 @@ import pygame
 import sys
 from pygame.locals import *
 import math
+from assets import *
 
 clock = pygame.time.Clock()
-
-pygame.init()
-
-windowSize = (1500, 800)
-window = pygame.display.set_mode((windowSize), pygame.NOFRAME|SCALED, vsync=1)
-
-text_color = (255, 255, 255)
-
-
-def mtext(text, font, text_color, x, y):
-    m = font.render(text, True, text_color)
-    window.blit(m, (x, y))
-
-obj = pygame.image.load(f'assets/ball.png').convert_alpha()
-bg = pygame.image.load(f'assets/bg.png').convert_alpha()
-font = pygame.font.Font('assets/fonts/C&C Red Alert [INET].ttf', 25)
-font2 = pygame.font.Font('assets/fonts/C&C Red Alert [INET].ttf', 15)
 
 time = 0
 x = 0
@@ -106,22 +90,17 @@ def main():
 
         angleRadian2 = obj.angle*(math.pi/180)
 
-        hMax = round(
-            ((obj.speed**2)*(math.sin(angleRadian2)**2))/(2*obj.gravity))
-        dRange = abs(round(
-            ((obj.speed**2)*(math.sin(2*angleRadian2)))/(obj.gravity)))
+        hMax = round(((obj.speed**2)*(math.sin(angleRadian2)**2))/(2*obj.gravity))
+        dRange = abs(round(((obj.speed**2)*(math.sin(2*angleRadian2)))/(obj.gravity)))
 
         mX = [(100, 720), (obj.rect.x, 720)]
-
         cX = (mX[0][0]+mX[1][0]/2)-55
 
         if 700-obj.rect.y < hMax-2:
             if not hMax_occur == True:
-                mY = [((abs(dRange)/2)+100, 720),
-                      ((abs(dRange)/2)+100, obj.rect.y+20)]
+                mY = [((abs(dRange)/2)+100, 720), ((abs(dRange)/2)+100, obj.rect.y+20)]
         else:
-            mY = [((abs(dRange)/2)+100, 720),
-                  ((abs(dRange)/2)+100, 700-hMax)]
+            mY = [((abs(dRange)/2)+100, 720), ((abs(dRange)/2)+100, 700-hMax)]
             hMax_occur = True
 
         if start:
@@ -136,37 +115,26 @@ def main():
 
         if userValues == 3:
             window.blit(bg, (0, 0))
-            mtext(
-                f"angle of projection: {obj.angle}°", font, text_color, 1100, 50)
-            mtext(f"press 'space' to start",
-                  font, text_color, 1100, 300)
-            mtext(f"initial velocity: {obj.speed}",
-                  font, text_color, 1100, 100)
+            text(f"angle of projection: {obj.angle}°", font, 1100, 50)
+            text(f"press 'space' to start", font, 1100, 300)
+            text(f"initial velocity: {obj.speed}", font, 1100, 100)
 
-            mtext(f"position: {obj.rect.x-100, 700-obj.rect.y}",
-                  font, text_color, 1100, 250)
+            text(f"position: {obj.rect.x-100, 700-obj.rect.y}", font, 1100, 250)
 
             s = obj.rect.x - 110
 
             if start:
-                mtext(f"displacement: *moving*",
-                      font, text_color, 1100, 150)
-                mtext(f"max height: {hMax} px",
-                      font, text_color, 1100, 200)
+                text(f"displacement: *moving*", font, 1100, 150)
+                text(f"max height: {hMax} px", font, 1100, 200)
             else:
                 if s < 0:
-                    mtext(f"displacement: 0", font,
-                          text_color, 1100, 150)
-                    mtext("0 px", font2, text_color, cX, 740)
-                    mtext(f"max height: -", font,
-                          text_color, 1100, 200)
+                    text(f"displacement: 0", font, 1100, 150)
+                    text("0 px", font2, cX, 740)
+                    text(f"max height: -", font, 1100, 200)
                 else:
-                    mtext(
-                        f"displacement: {obj.rect.x-100} px", font, text_color, 1100, 150)
-                    mtext(f"{obj.rect.x-100} px", font2,
-                          text_color, cX-10, 740)
-                    mtext(f"max height: {hMax} px",
-                          font, text_color, 1100, 200)
+                    text(f"displacement: {obj.rect.x-100} px", font, 1100, 150)
+                    text(f"{obj.rect.x-100} px", font2, cX-10, 740)
+                    text(f"max height: {hMax} px", font, 1100, 200)
 
             pygame.draw.line(window, (255, 255, 255), mX[0], mX[1])
             pygame.draw.line(window, (255, 255, 255), mY[0], mY[1])
