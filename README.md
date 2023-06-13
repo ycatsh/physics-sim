@@ -21,7 +21,7 @@ Projectile motion is a type of motion that occurs when an object moves in a [gra
 
 <br>
 
-Projectile Motion: [click here](https://youtu.be/h4Sw3zGjQJc)
+Projectile Motion: [click here](https://youtu.be/h4Sw3zGjQJc)  
 N-body simulation (under development)
 
 
