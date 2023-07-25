@@ -10,27 +10,24 @@ using namespace std;
 
 std::random_device rd;
 std::mt19937 gen(rd());
-std::uniform_int_distribution<> dist(1, 100);
-std::uniform_real_distribution<float> vel(2.0f, 3.0f);
+std::uniform_int_distribution<> dist(100, 1800);
+std::uniform_real_distribution<float> vel(-5.0f, 5.0f);
+
+const float G = 100;
+
 
 class Source {
     sf::CircleShape point;
     sf::Vector2f pos;
-    float gravity;
 
 public:
-    Source(float x, float y, float gravity) {
+    Source(float x, float y) {
         pos.x = x;
         pos.y = y;
-        this->gravity = gravity;
 
         point.setPosition(pos);
         point.setFillColor(sf::Color::White);
         point.setRadius(3);
-    }
-
-    float get_gravity() {
-        return gravity;
     }
 
     sf::Vector2f get_pos() {
@@ -41,6 +38,7 @@ public:
         window.draw(point);
     }
 };
+
 
 class Particle {
     sf::CircleShape point;
@@ -59,19 +57,43 @@ public:
         point.setRadius(2);
     }
 
-    void update(Source &point) {
-        float sX = point.get_pos().x - pos.x;
-        float sY = point.get_pos().y - pos.y;
-        float s = sqrt((sX * sX) + (sY * sY));
+    sf::Vector2f get_pos() {
+        return pos;
+    }
 
-        float norm_x = (1.0f / s) * sX;
-        float norm_y = (1.0f / s) * sY;
+    void update(std::vector<Source>& sources, std::vector<Particle>& particles) {
+        for (Source& source : sources) {
+            float sX = source.get_pos().x - pos.x;
+            float sY = source.get_pos().y - pos.y;
+            float s = sqrt((sX * sX) + (sY * sY));
 
-        float accl_x = norm_x * point.get_gravity() * pow((1.0f / s), 2);
-        float accl_y = norm_y * point.get_gravity() * pow((1.0f / s), 2);
+            float norm_x = (1.0f / s) * sX;
+            float norm_y = (1.0f / s) * sY;
 
-        vel.x += accl_x;
-        vel.y += accl_y;
+            float accl_x = norm_x * G * pow((1.0f / s), 2);
+            float accl_y = norm_y * G * pow((1.0f / s), 2);
+
+            vel.x += accl_x;
+            vel.y += accl_y;
+        }
+
+        for (Particle& particle : particles) {
+            if (&particle != this) {
+                float sX = particle.get_pos().x - pos.x;
+                float sY = particle.get_pos().y - pos.y;
+                float s = sqrt((sX * sX) + (sY * sY));
+
+                float norm_x = (1.0f / s) * sX;
+                float norm_y = (1.0f / s) * sY;
+
+                float accl_x = norm_x * G * pow((1.0f / s), 2);
+                float accl_y = norm_y * G * pow((1.0f / s), 2);
+
+                vel.x += accl_x;
+                vel.y += accl_y;
+            }
+        }
+
         pos.x += vel.x;
         pos.y += vel.y;
     }
@@ -87,7 +109,8 @@ int main() {
     window.setFramerateLimit(60);
     sf::Clock clock;
 
-    Source source(960, 540, 10000);
+    std::vector<Source> sources;
+    sources.emplace_back(1920/2, 1080/2);
 
     sf::Font font;
     font.loadFromFile("../fonts/font.ttf");
@@ -115,17 +138,23 @@ int main() {
 
         window.clear();
 
+
         for (int i = 0; i < particles.size(); i++) {
-            particles[i].update(source);
+            particles[i].update(sources, particles);
+        }
+
+        for (int i = 0; i < particles.size(); i++) {
             particles[i].render(window);
         }
 
-        source.render(window);
-        window.draw(fps_text);
+        for (Source& source : sources) {
+            source.render(window);
+        }
 
+        window.draw(fps_text);
         window.display();
 
-        if (particles.size() < 20000) {
+        if (particles.size() < 2000) {
             int posX = dist(gen);
             int posY = dist(gen);
 
