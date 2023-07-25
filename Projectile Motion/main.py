@@ -1,10 +1,10 @@
 import os
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
-import pygame
-import sys
 from pygame.locals import *
-import math
 from assets import *
+import pygame
+import math
+import sys
 
 clock = pygame.time.Clock()
 
@@ -12,41 +12,17 @@ time = 0
 x = 0
 y = 0
 
-userValues = 0
+if len(sys.argv) != 4:
+    print("Error: Provide 3 arguments (u, g, θ)")
+    sys.exit(1)
 
-while userValues < 3:
-    speed = int(
-        input('\nENTER INITIAL SPEED (1, 100 px/s): '))
-    gravity = int(
-        input('\nENTER ACC DUE TO GRAVITY (1, 25 px/s): '))
-    angle = int(
-        input('\nENTER ANGLE OF PROJECTION (1, 90): '))
+try:
+    speed = int(sys.argv[1])
+    gravity = int(sys.argv[2])
+    angle = int(sys.argv[3])
 
-    if speed <= 100 and speed > 0:
-        userValues += 1
-    else:
-        userValues = 0
-        print('\nError! please enter a valid initial speed\n')
-
-    if gravity <= 25 and gravity > 0:
-        userValues += 1
-    else:
-        userValues = 0
-        print('\nError! please enter valid acceleration due to gravity\n')
-
-    if angle < 91 and angle > 0:
-        userValues += 1
-    else:
-        userValues = 0
-        print('\nError! please enter a valid angle\n')
-
-    if userValues < 3:
-        userValues = 0
-
-    if userValues == 3:
-        print(
-            f'\ncheck the opened window!')
-        break
+except ValueError:
+    print("Error: Provide only integers")
 
 
 class Obj():
@@ -64,8 +40,7 @@ class Obj():
         uX = abs(math.cos(angleRadian)*speed)
         uY = abs(math.sin(angleRadian)*speed)
 
-        sX = uX*time  # displacement along x (here) = speed * time
-        # displacement along y (here) = u*t + [1/2*{a*(t^2)}] {u = initial velocity, t = time, a = acceleratiopn due to force of gravity}
+        sX = uX*time
         sY = (uY * time)+((-gravity * (time)**2)/2)
 
         dX = round(sX + x)
@@ -113,49 +88,49 @@ def main():
                 start = False
                 obj.rect.y = 700
 
-        if userValues == 3:
-            window.blit(bg, (0, 0))
-            text(f"angle of projection: {obj.angle}°", font, 1100, 50)
-            text(f"press 'space' to start", font, 1100, 300)
-            text(f"initial velocity: {obj.speed}", font, 1100, 100)
 
-            text(f"position: {obj.rect.x-100, 700-obj.rect.y}", font, 1100, 250)
+        window.blit(bg, (0, 0))
+        text(f"angle of projection: {obj.angle}°", font, 1100, 50)
+        text(f"press 'space' to start", font, 1100, 300)
+        text(f"initial velocity: {obj.speed}", font, 1100, 100)
 
-            s = obj.rect.x - 110
+        text(f"position: {obj.rect.x-100, 700-obj.rect.y}", font, 1100, 250)
 
-            if start:
-                text(f"displacement: *moving*", font, 1100, 150)
-                text(f"max height: {hMax} px", font, 1100, 200)
+        s = obj.rect.x - 110
+
+        if start:
+            text(f"displacement: *moving*", font, 1100, 150)
+            text(f"max height: {hMax} px", font, 1100, 200)
+        else:
+            if s < 0:
+                text(f"displacement: 0", font, 1100, 150)
+                text("0 px", font2, cX, 740)
+                text(f"max height: -", font, 1100, 200)
             else:
-                if s < 0:
-                    text(f"displacement: 0", font, 1100, 150)
-                    text("0 px", font2, cX, 740)
-                    text(f"max height: -", font, 1100, 200)
-                else:
-                    text(f"displacement: {obj.rect.x-100} px", font, 1100, 150)
-                    text(f"{obj.rect.x-100} px", font2, cX-10, 740)
-                    text(f"max height: {hMax} px", font, 1100, 200)
+                text(f"displacement: {obj.rect.x-100} px", font, 1100, 150)
+                text(f"{obj.rect.x-100} px", font2, cX-10, 740)
+                text(f"max height: {hMax} px", font, 1100, 200)
 
-            pygame.draw.line(window, (255, 255, 255), mX[0], mX[1])
-            pygame.draw.line(window, (255, 255, 255), mY[0], mY[1])
-            obj.show()
+        pygame.draw.line(window, (255, 255, 255), mX[0], mX[1])
+        pygame.draw.line(window, (255, 255, 255), mY[0], mY[1])
+        obj.show()
 
-            for event in pygame.event.get():
-                if event.type == QUIT:
-                    pygame.quit()
-                    sys.exit()
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                pygame.quit()
+                sys.exit()
 
-                if event.type == KEYDOWN:
-                    if event.key == K_SPACE:
-                        start = True
-                        x = obj.rect.x
-                        y = obj.rect.y
-                        time = 0
-                        speed = obj.speed
-                        angle = obj.angle
+            if event.type == KEYDOWN:
+                if event.key == K_SPACE:
+                    start = True
+                    x = obj.rect.x
+                    y = obj.rect.y
+                    time = 0
+                    speed = obj.speed
+                    angle = obj.angle
 
-            pygame.display.update()
-            clock.tick(60)
+        pygame.display.update()
+        clock.tick(60)
 
 
 main()
