@@ -1,13 +1,15 @@
 import os
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
-from pygame.locals import *
-from assets import *
-import pygame
-import math
 import sys
+import math
+
+from pygame.locals import *
+import pygame
+
+from assets import *
+
 
 clock = pygame.time.Clock()
-
 time = 0
 x = 0
 y = 0

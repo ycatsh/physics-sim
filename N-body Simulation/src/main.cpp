@@ -11,10 +11,10 @@ using namespace std;
 std::random_device rd;
 std::mt19937 gen(rd());
 
-std::uniform_int_distribution<> distx(100, 1800);
-std::uniform_int_distribution<> disty(10, 900);
-std::uniform_real_distribution<float> vel(-2.0f, 2.0f);
-std::uniform_real_distribution<float> m(10.0f, 100.0f);
+std::uniform_int_distribution<> distx(50, 1870);
+std::uniform_int_distribution<> disty(50, 1030);
+std::uniform_real_distribution<float> vel(-0.5f, 0.5f);
+std::uniform_real_distribution<float> m(10.0f, 50.0f);
 
 const float G = 0.001;
 
@@ -167,9 +167,9 @@ int main() {
     sf::Font font;
     font.loadFromFile("../fonts/font.ttf");
 
-    sources.emplace_back(1920/2, 1080/2, 1000);
+    sources.emplace_back(1920/2, 1080/2, 10000);
 
-    for (int num = 0; num <= 100; num++) {
+    for (int num = 0; num <= 200; num++) {
         int posX = distx(gen);
         int posY = disty(gen);
         float dx = vel(gen);
@@ -192,7 +192,6 @@ int main() {
         std::ostringstream ss;
         ss << "FPS: " << std::fixed << std::setprecision(0) << std::round(fps);
         sf::Text fps_text;
-        fps_text.setFont(font);
         fps_text.setString(ss.str());
         fps_text.setPosition(20, 1060);
         fps_text.setCharacterSize(20);
