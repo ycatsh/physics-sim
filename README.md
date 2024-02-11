@@ -17,12 +17,7 @@ Approximating Gravity in C++ using the [Barnes-Hut Algorithm](https://en.wikiped
 Projectile motion is a type of motion that occurs when an object moves in a [gravitational field](https://en.wikipedia.org/wiki/Gravitational_field). In this simulation, a particle's [trajectory](https://en.wikipedia.org/wiki/Trajectory) is modeled based on user-defined attributes. These attributes determine the behavior of the ball during its motion. The simulation calculates the ball's trajectory at intervals of 0.2 seconds slowing the simulation for better visibility.
 
 ### Run
-1. In `Projectile Motion/` run `pip install -r requirements.txt` to install the dependencies
-2. To start the simulation run the python file `main.py` with: `python main.py <initial_speed> <acceleration_due_to_gravity> <angle_of_projection>`
+1. In `Projectile Motion/` run `pip3 install -r requirements.txt` to install the dependencies
+2. To start the simulation run the python file `main.py` with: `python3 main.py <initial_speed> <acceleration_due_to_gravity> <angle_of_projection>`
 
-<br>
-<br>
-
-## Videos:
-Projectile Motion: [click here](https://youtu.be/h4Sw3zGjQJc)  
-N-body simulation (under development)
+Note: It's ``pip`` and ``python`` on windows systems
